@@ -1,3 +1,5 @@
+#GET http://localhost:8080/recommend/getHighestAndLowestPriceByCategory/{category_name}
+#GET http://localhost:8080/recommend/getHighestAndLowestPriceByCategory/Top
 
-GET http://localhost:8080/recommend/getHighestAndLowestPriceByCategory/Top
+GET http://localhost:8080/recommend/getHighestAndLowestPriceByCategory/Sneakers
 Accept: application/json
