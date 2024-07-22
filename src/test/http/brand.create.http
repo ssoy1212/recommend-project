@@ -1,0 +1,8 @@
+#POST http://localhost:8080/brands
+POST http://localhost:8080/brands
+Content-Type: application/json
+
+{
+  "name": "BRAND_Q"
+  ,"viewRank": 1
+}

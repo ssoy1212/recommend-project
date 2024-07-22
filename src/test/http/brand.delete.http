@@ -1,0 +1,7 @@
+#DELETE http://localhost:8080/brands
+DELETE http://localhost:8080/brands
+Content-Type: application/json
+
+{
+  "id": 1
+}

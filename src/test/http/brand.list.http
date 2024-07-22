@@ -1,0 +1,3 @@
+#GET http://localhost:8080/brands/find/{seach_brand_name}
+GET http://localhost:8080/brands/find/brand
+Accept: application/json
