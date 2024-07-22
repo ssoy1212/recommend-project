@@ -1,4 +1,4 @@
-PUT http://localhost:8080/products/
+PUT http://localhost:8080/products
 Accept: application/json
 Content-Type: application/json
 

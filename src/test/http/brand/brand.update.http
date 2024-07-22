@@ -1,0 +1,8 @@
+PUT http://localhost:8080/brands
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 4,
+  "name": "BRAND_D"
+}
