@@ -1,0 +1,29 @@
+
+DROP TABLE IF EXISTS brands;
+DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS products;
+
+CREATE TABLE IF NOT EXISTS brands (
+    id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL UNIQUE,
+    view_rank INT NOT NULL DEFAULT 1,
+    created_dt DATETIME NOT NULL,
+    updated_dt DATETIME NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS categories (
+    id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    created_dt DATETIME NOT NULL,
+    updated_dt DATETIME NOT NULL
+    );
+CREATE TABLE IF NOT EXISTS products (
+    id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    brand_id BIGINT NOT NULL,
+    category_id BIGINT NOT NULL,
+    name VARCHAR(100),
+    price INT,
+    view_rank INT NOT NULL DEFAULT 1,
+    created_dt DATETIME NOT NULL,
+    updated_dt DATETIME NOT NULL
+);
