@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 
 @Getter
 public enum ErrorCode {
-    INVALID_INPUT_VALUE(HttpStatus.BAD_REQUEST.value(), "올바르지 않은 입력값입니다."),
     METHOD_NOT_ALLOWED(HttpStatus.METHOD_NOT_ALLOWED.value(), "잘못된 HTTP 메서드를 호출했습니다."),
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR.value(), "서버 에러가 발생했습니다."),
 
@@ -30,9 +29,12 @@ public enum ErrorCode {
 
     FAIL_CREATE_BRAND(HttpStatus.INTERNAL_SERVER_ERROR.value(),"브랜드 등록이 실패했습니다."),
     FAIL_CREATE_PRODUCT(HttpStatus.INTERNAL_SERVER_ERROR.value(),"상품 등록이 실패했습니다."),
-    FAIL_DELETE_BRAND(HttpStatus.INTERNAL_SERVER_ERROR.value(),"브랜드 삭제에 실패했습니다."),
 
-    FAIL_MODIFY_BRAND(HttpStatus.INTERNAL_SERVER_ERROR.value(),"브랜드 변경이 실패했습니다.")
+    FAIL_DELETE_BRAND(HttpStatus.INTERNAL_SERVER_ERROR.value(),"브랜드 삭제에 실패했습니다."),
+    FAIL_DELETE_PRODUCT(HttpStatus.INTERNAL_SERVER_ERROR.value(),"상품 삭제에 실패했습니다."),
+
+    FAIL_MODIFY_BRAND(HttpStatus.INTERNAL_SERVER_ERROR.value(),"브랜드 변경이 실패했습니다."),
+    FAIL_MODIFY_PRODUCT(HttpStatus.INTERNAL_SERVER_ERROR.value(),"브랜드 변경이 실패했습니다."),
     ;
     private final String message;
     private final Integer status;
