@@ -1,0 +1,12 @@
+PUT http://localhost:8080/products/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 8,
+  "brandId": 1,
+  "categoryId": 1,
+  "price": 5600,
+  "viewRank": 1,
+  "name": "A_Outer_Test"
+}

@@ -1,0 +1,5 @@
+#GET http://localhost:8080/products/find/{product_id}
+#GET http://localhost:8080/products/find/99
+#GET http://localhost:8080/products/find/8
+GET http://localhost:8080/products/find/1
+Accept: application/json
