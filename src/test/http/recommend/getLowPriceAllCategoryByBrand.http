@@ -1,0 +1,3 @@
+#GET http://localhost:8080/brands/find/brand
+GET http://localhost:8080/recommend/getLowPriceAllCategoryByBrand
+Accept: application/json
