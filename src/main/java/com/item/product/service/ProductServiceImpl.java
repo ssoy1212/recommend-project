@@ -67,7 +67,7 @@ public class ProductServiceImpl implements ProductService {
             Product checkProduct = this.findByNameIgnoreCase(request.getName());
 
             if (checkProduct != null ) {
-                throw new BaseException(ErrorCode.FAIL_CREATE_PRODUCT);
+                throw new BaseException(ErrorCode.DUPLICATE_PRODUCT_NAME);
             }
 
             return Product.builder()
