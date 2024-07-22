@@ -50,23 +50,28 @@ public interface RecommendJpaRepository extends JpaRepository<RecommendEntity, L
             "SELECT " +
                 "'MAX' AS price_type" +
                 ", (SELECT name FROM BRANDS a WHERE a.id = brand_id) AS brand_name" +
-                ", price\n" +
-            "FROM PRODUCTS\n" +
-            "WHERE (category_id, price) IN (\n" +
-                "SELECT category_id, MAX(price) AS max_price\n" +
+                ", price \n" +
+                ", view_rank \n" +
+                ", rownum \n" +
+            "FROM PRODUCTS " +
+            "WHERE (category_id, price, view_rank) IN ( " +
+                "SELECT category_id, MAX(price) AS max_price, MIN(view_rank) \n" +
                 "FROM PRODUCTS\n" +
-                "WHERE category_id = ?1\n" +
-                "GROUP BY category_id)\n" +
+                "WHERE category_id = ?1 " +
+                "GROUP BY category_id) " +
+            "AND rownum =1 " +
         "UNION\n" +
             "SELECT " +
-                "'MIN' AS price_type" +
-                ", (SELECT name FROM BRANDS a WHERE a.id = brand_id) AS brand_name" +
+                "'MIN' AS price_type\n" +
+                ", (SELECT name FROM BRANDS a WHERE a.id = brand_id) AS brand_name\n" +
                 ", price\n" +
+                ", view_rank \n" +
+                ", rownum \n" +
             "FROM PRODUCTS\n" +
-            "WHERE (category_id, price) IN (\n" +
-                "SELECT category_id, MIN(price) AS max_price \n" +
-                "FROM PRODUCTS\n" +
+            "WHERE (category_id, price, view_rank) IN (\n" +
+                "SELECT category_id, MIN(price) AS min_price , MIN(view_rank) \n" +
                 "WHERE category_id = ?1\n" +
-                "GROUP BY category_id)", nativeQuery = true)
+                "GROUP BY category_id)\n" +
+            "AND rownum =1 " , nativeQuery = true)
     Optional<List<RecommendResponsesEntity>> getHighestAndLowestPriceByCategory(Long id);
 }
