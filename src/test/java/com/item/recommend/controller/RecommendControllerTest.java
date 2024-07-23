@@ -82,9 +82,9 @@ class RecommendControllerTest {
                         .price(11400L)
                         .build());
         items.add(RecommendItems.builder()
-                        .brandName("BRAND_C")
+                        .brandName("BRAND_A")
                         .priceType("MIN")
-                        .price(10000L)
+                        .price(11200L)
                         .build());
         Recommend recommend = Recommend.makeItems("Top",items);
         RecommendResponse response = RecommendResponse.builder()

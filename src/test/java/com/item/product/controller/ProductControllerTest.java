@@ -46,7 +46,7 @@ class ProductControllerTest {
                 .accept(MediaType.APPLICATION_JSON));
         // then
         result.andExpect(status().isOk())
-                .andExpect(jsonPath("$.code").value(MessageCode.GET_PRODUCT.getMessage()))
+                .andExpect(jsonPath("$.code").value(MessageCode.GET_PRODUCT.getCode()))
                 .andExpect(jsonPath("$.product.id").value(product.getId()))
                 .andExpect(jsonPath("$.product.name").value(product.getName()));
     }
@@ -74,7 +74,7 @@ class ProductControllerTest {
                 .build();
         // when
         final ResultActions updateResult = mockMvc.perform(MockMvcRequestBuilders
-                .put("/products/")
+                .put("/products")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().registerModule(new JavaTimeModule()).writeValueAsString(product))
                 .accept(MediaType.APPLICATION_JSON));
@@ -99,7 +99,7 @@ class ProductControllerTest {
                 .build();
         // when
         final ResultActions updateResult = mockMvc.perform(MockMvcRequestBuilders
-                .put("/products/")
+                .put("/products")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().registerModule(new JavaTimeModule()).writeValueAsString(product))
                 .accept(MediaType.APPLICATION_JSON));
@@ -123,7 +123,7 @@ class ProductControllerTest {
                 .build();
         // when
         final ResultActions updateResult = mockMvc.perform(MockMvcRequestBuilders
-                .put("/products/")
+                .put("/products")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().registerModule(new JavaTimeModule()).writeValueAsString(product))
                 .accept(MediaType.APPLICATION_JSON));
@@ -147,7 +147,7 @@ class ProductControllerTest {
                 .build();
         // when
         final ResultActions updateResult = mockMvc.perform(MockMvcRequestBuilders
-                .put("/products/")
+                .put("/products")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(new ObjectMapper().registerModule(new JavaTimeModule()).writeValueAsString(product))
                 .accept(MediaType.APPLICATION_JSON));
