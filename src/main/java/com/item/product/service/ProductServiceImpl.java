@@ -123,7 +123,8 @@ public class ProductServiceImpl implements ProductService {
 
             Product checkProduct = this.findByNameIgnoreCase(request.getName());
 
-            if (checkProduct != null) {
+            if (checkProduct != null && checkProduct.getName().equals(request.getName())
+                    && !checkProduct.getId().equals(request.getId())) {
                 throw new BaseException(ErrorCode.DUPLICATE_PRODUCT_NAME);
             }
         }catch (BaseException e) {
