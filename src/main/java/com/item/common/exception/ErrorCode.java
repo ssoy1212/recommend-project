@@ -34,7 +34,7 @@ public enum ErrorCode {
     FAIL_DELETE_PRODUCT(HttpStatus.INTERNAL_SERVER_ERROR.value(),"상품 삭제에 실패했습니다."),
 
     FAIL_MODIFY_BRAND(HttpStatus.INTERNAL_SERVER_ERROR.value(),"브랜드 변경이 실패했습니다."),
-    FAIL_MODIFY_PRODUCT(HttpStatus.INTERNAL_SERVER_ERROR.value(),"브랜드 변경이 실패했습니다."),
+    FAIL_MODIFY_PRODUCT(HttpStatus.INTERNAL_SERVER_ERROR.value(),"상품 변경이 실패했습니다."),
     ;
     private final String message;
     private final Integer status;

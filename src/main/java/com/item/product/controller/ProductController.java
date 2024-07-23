@@ -1,6 +1,5 @@
 package com.item.product.controller;
 
-import com.item.common.enums.MessageCode;
 import com.item.product.controller.port.ProductService;
 import com.item.product.controller.response.ProductResponse;
 import com.item.product.domain.ProductRequest;
@@ -23,9 +22,9 @@ public class ProductController {
     public ResponseEntity<ProductResponse> findProductList(@PathVariable Long id) {
         return ResponseEntity
                 .ok()
-                .body(ProductResponse.from(MessageCode.GET_PRODUCT.getMessage(),productService.getProductById(id)));
+                .body(ProductResponse.from("P1004",productService.getProductById(id)));
     }
-    @PutMapping("/")
+    @PutMapping
     public ResponseEntity<ProductResponse> updateProduct(@RequestBody ProductRequest request) {
         return ResponseEntity
                 .ok()
